@@ -3,7 +3,7 @@ import json
 import helper
 
 client = weaviate.Client("http://localhost:8881")
-client.timeout_config = (6000) #Increase/Decrease value for larger/smaller dataset size. 
+client.timeout_config = (12000) #Increase/Decrease value for larger/smaller dataset size. 
 
 client.schema.delete_all()
 schema = {
