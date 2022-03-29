@@ -7,10 +7,9 @@ Podcast transcripts: [`Changelog`](https://github.com/thechangelog/transcripts)
 1. Set-up  Weaviate: `docker-compose up -d`*
 2. Install Weaviate client: `pip install weaviate_client==3.2.2`
 3. Import data: `python3 import.py`** 
-4. Query data: Go to [console.semi.technology](https://console.semi.technology/) on a non-chromium based browser (like Edge or Safari) and connect to http://localhost:8881. Click on Query Module to start Querying.
+4. Query data: Go to [console.semi.technology](https://console.semi.technology/) on a non-chromium-based browser (like Edge or Safari) and connect to http://localhost:8881. Click on Query Module to start Querying.
  
 *Change port `8881` in `docker-compose.yml`  and `import.py` to a different value (like 9999), if not able to connect.  
-**Increase/Decrease `timeout_config` for larger/smaller dataset size.  
 <br>
 # Example Queries:
 

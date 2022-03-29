@@ -3,7 +3,7 @@ import json
 import helper
 
 client = weaviate.Client("http://localhost:8881")
-client.timeout_config = (6000)
+client.timeout_config = (6000) #Increase/Decrease value for larger/smaller dataset size. 
 
 client.schema.delete_all()
 schema = {
@@ -25,7 +25,7 @@ schema = {
 }
 client.schema.create(schema)
 
-with open("data/podcast.json", 'r') as f:
+with open("data/podcast_ds.json", 'r') as f:
     datastore = json.load(f)
     
 def add_podcasts(batch_size=1, debug_mode=False):
@@ -48,9 +48,12 @@ def add_podcasts(batch_size=1, debug_mode=False):
                     if result['result'] != {}:
                         helper.log(result['result'])
 
+                message = str(item["title"]) + ' imported'
+                helper.log(message)
+
             no_items_in_batch = 0
 
     client.batch.create_objects()
     
-add_podcasts()
+add_podcasts(1, True)
 
